@@ -27,5 +27,15 @@ creditsnumber int,
 coursecode nvarchar(5) -- ex:CS201
 )
 
+-- Insert value into the tables
 
 
+insert into students(
+lastname,
+firstname,
+dateofbirth,
+enrollmentdate
+)
+values(
+'Reynolds', 'McFee', '1999-01-11','2021-01-11'
+)
