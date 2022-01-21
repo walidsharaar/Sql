@@ -36,6 +36,9 @@ firstname,
 dateofbirth,
 enrollmentdate
 )
-values(
-'Reynolds', 'McFee', '1999-01-11','2021-01-11'
-)
+values
+('Reynolds', 'Karo', '1999-01-11','2021-01-11'),
+('Jodi', 'klein', '1994-01-11','2021-02-11'),
+('Alex', 'Muller', '1996-01-11','2021-04-11'),
+('Trisha', 'Williamson', '1991-01-11','2021-05-11'),
+('Reynolds', 'bitine', '1994-01-11','2021-08-11')
