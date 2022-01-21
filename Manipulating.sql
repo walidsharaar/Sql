@@ -50,3 +50,13 @@ select * from students
 --Select only two columns
 
 select lastname as 'Last Name',firstname as 'First Name' from students
+
+-- select data without using alias
+
+select
+firstname [First Name],
+lastname [Last name],
+enrollmentdate [Enrollment Date]
+from students
+
+
