@@ -79,3 +79,7 @@ SELECT [sid]
 
  select * from students
  where lastname like's%'
+
+ -- combined two columns 
+
+ Select *, lastname + firstname from students
