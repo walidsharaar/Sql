@@ -60,3 +60,12 @@ enrollmentdate [Enrollment Date]
 from students
 
 
+--- Filtering and selection in sql
+
+SELECT [sid]
+      ,[lastname]
+      ,[firstname]
+      ,[dateofbirth]
+      ,[enrollmentdate]
+  FROM [school].[dbo].[students]
+  where  lastname ='Trisha'
