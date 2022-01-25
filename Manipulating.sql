@@ -41,8 +41,12 @@ values
 ('Jodi', 'klein', '1994-01-11','2021-02-11'),
 ('Alex', 'Muller', '1996-01-11','2021-04-11'),
 ('Trisha', 'Williamson', '1991-01-11','2021-05-11'),
-('Reynolds', 'bitine', '1994-01-11','2021-08-11')
-
+('Reynolds', 'bitine', '1994-01-11','2021-08-11'),
+('Student1', 'Karo', '1999-01-11','2021-01-11'),
+('Student2', 'klein', '1994-01-11','2021-02-11'),
+('Student3', 'Muller', '1996-01-11','2021-04-11'),
+('Student4', 'Williamson', '1991-01-11','2021-05-11'),
+('Student5', 'bitine', '1994-01-11','2021-08-11')
 
 -- Select all data from the table
 select * from students
@@ -69,3 +73,9 @@ SELECT [sid]
       ,[enrollmentdate]
   FROM [school].[dbo].[students]
   where  lastname ='Trisha'
+
+ --- fildering using wildcards
+ --- using % and like we can select data
+
+ select * from students
+ where lastname like's%'
