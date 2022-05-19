@@ -4,7 +4,7 @@
 Umart is a fictional retail company, selling items of various categories. Inside the Umart database you’ll find a single table - Orders, which has the data of all the orders that have been placed.
 
 **/
-use Umart;
+
 
 select * from orders; 
 
@@ -39,3 +39,25 @@ select customer_segment,
 	   customer_name
 from orders
 where customer_segment= 'Corporate';
+
+
+-- 5.Write a query to display the order_priority, discount, customer_name, and customer_region for all orders made in the 'Central' or 'West' regions
+
+select order_priority,
+	   discount,
+	   customer_name
+from orders 
+where customer_region in('Central','West');
+
+-- 6. Write a query to display the order_id, ship_mode, customer_segment, and product_id for all orders not made by a 'Small Business' or 'Corporate' customer_segment
+
+select order_id,
+	   ship_mode,
+	   customer_segment,
+	   product_id
+from orders 
+where customer_segment not in('Small Business','Corporate');
+
+
+
+
