@@ -60,4 +60,21 @@ where customer_segment not in('Small Business','Corporate');
 
 
 
+-- 7. Write a query to display the order_id, ship_mode, customer_segment, and unit_price for all orders with unit_price in the range of 10-20
+select order_id,
+	   ship_mode,
+	   customer_segment,
+	   product_id
+from orders 
+where unit_price  between 10 and 20;
 
+-- 8. Write a query to display the order_id, discount, unit_price, amount_of_products, profit and discount for all orders with profit in the range of 100-200
+
+select order_id,
+	   discount,
+	   unit_price,
+	   amount_of_products,
+	   profit,
+	   discount
+from orders 
+where profit  between 100 and 200;
