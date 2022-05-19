@@ -78,3 +78,46 @@ select order_id,
 	   discount
 from orders 
 where profit  between 100 and 200;
+
+-- 9. Write a query to display the customer_id and customer_name for all customers with customer_name starts with an 'E'
+
+select 
+customer_id,
+customer_name
+from orders
+where customer_name like 'E%' 
+
+-- 10. Write a query to display the customer_id and customer_name for all customers with customer_name ends with an 'e'
+
+select 
+customer_id,
+customer_name
+from orders
+where customer_name like '%e'
+
+-- 11.Write a query to display the customer_id and customer_name for all customers with customer_name that contains an 'e' (somewhere)
+
+
+select 
+customer_id,
+customer_name
+from orders
+where customer_name like '%e%'
+
+
+
+--12. Write a query to display the customer_id and customer_name for all customers with customer_name starts with an 'E' or 'A'
+
+select 
+customer_id,
+customer_name
+from orders
+where customer_name like 'E%' or customer_name like 'A%'
+
+-- 13. Write a query to display the customer_id and customer_name for all customers with customer_name ends with an 'e' or 'i'
+
+select 
+customer_id,
+customer_name
+from orders
+where customer_name like '%e ' or customer_name like ' %i'
