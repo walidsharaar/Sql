@@ -121,3 +121,50 @@ customer_id,
 customer_name
 from orders
 where customer_name like '%e ' or customer_name like ' %i'
+
+-- 14. Write a query to display the customer_id, customer_country, and customer_region for all customers with no region
+
+select customer_id,
+customer_country,
+customer_region
+from orders
+where customer_region   isnull 
+
+-- 15. Write a query to display the order_priority, discount, shipping_cost, ship_mode and discount for all orders with 'High' order_priority and 'Regular Air' ship_mode
+
+Select order_priority,
+discount,
+shipping_cost,
+ship_mode,
+discount
+from orders
+where order_priority = 'High' and ship_mode='Regular Air'
+
+--16. Write a query to display the order_priority, discount, shipping_cost, ship_mode and discount for all orders with 'High' order_priority or 'Regular Air' ship_mod
+Select order_priority,
+discount,
+shipping_cost,
+ship_mode,
+discount
+from orders
+where order_priority = 'High' or  ship_mode='Regular Air'
+
+--17. Write a query to display the order_id, customer_id, customer_region, customer_country, and customer_segment for orders made by:
+--a. customers belong to the 'Small Business' or 'Corporate' customer_segment and:
+--b. customers not living in the ‘North’ or ‘South’ regions
+
+select order_id,
+customer_region,
+customer_segment
+from orders
+where customer_segment in ('Small Business','Corporate') and   customer_region not in('North','South')
+
+-- 18.Write a query to display the order_id, discount, unit_price, profit and discount for all orders with profit in the range of 100-200 and discount not in the range of 0.1-0.5
+
+select order_id,
+discount,
+unit_price,
+profit,
+ discount
+ from orders
+ where profit in (100,200) and discount not in(0.1,0.5)
