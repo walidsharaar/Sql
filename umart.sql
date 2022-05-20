@@ -168,3 +168,57 @@ profit,
  discount
  from orders
  where profit in (100,200) and discount not in(0.1,0.5)
+
+
+--19.Write a query to display the order_id, discount, unit_price, and profit.
+--a. Restrict the results to display only orders with profit > 100
+--b. Sort the output by discount in a descending order
+
+
+select order_id,
+discount,
+unit_price,
+profit
+from orders
+where profit > 100
+order by discount desc;
+
+--20. Write a query to display the order_id, discount, unit_price, and profit.
+--a. Restrict the results to display only orders with profit > 100
+--b. Sort the output by discount in a descending order, and then by profit in an ascending order
+
+select order_id,
+discount,
+unit_price,
+profit
+from orders
+where profit > 100
+order by discount desc,profit;
+
+
+
+-- 21. Write a query to display the row_id, order_priority, unit_price, shipping_cost and customer_name
+--a. Sort the output by shipping_cost
+--b. Limit your output to the first 5 rows
+
+select row_id,
+order_priority,
+unit_price,
+shipping_cost,
+customer_name
+from orders
+order by shipping_cost 
+limit 5
+
+-- 22. Write a query to display the row_id, order_priority, unit_price, shipping_cost and profit
+--a. Sort the output by profit (ascending)
+--b. Limit your output to the first 3 rows
+
+select row_id,
+order_priority,
+unit_price,
+shipping_cost,
+customer_name
+from orders
+order by profit 
+limit 3
