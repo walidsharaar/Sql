@@ -43,9 +43,18 @@ select title, director, rating, num_of_seasons
 from series
 where director is not NULL and num_of_seasons > 7
 -- [movies] Write a query to display the title, director, cast, country and rating, for all movies having Ryan Reynolds in their cast
-
+select title, director, cast, country, rating 
+from movies 
+where cast like '%Ryan Reynolds%'
 --[movies] Write a query to display the title, director, cast, country and rating, for all movies having Ryan Reynolds and Nicolas Cage in their cast
-
+select title, director, cast, country, rating 
+from movies 
+where cast like '%Ryan Reynolds%' and cast like '%Nicolas Cage%'
 --[movies] Write a query to display the title, director, cast, country, duration_in_minutes, and rating a. for all movies having PG (Parental Guidance) in their rating b. and movie duration is greater than 3 hours
-
+select title, director, cast, country, duration_in_minutes, rating 
+from movies 
+where rating like '%PG%' and duration_in_minutes > 180
 -- [series] Write a query to display title, director, cast, country, and release_year for all series released in 2014, 2016, or 2018. Sort the output by title (ascending)
+select title, director, cast, country, release_year 
+from series 
+where release_year in (2014,2016,2018)
