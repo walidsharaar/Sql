@@ -29,11 +29,19 @@ from movies
 where release_year between 2014 and 2016
 order by duration_in_minutes desc
 --[movies] Write a query to display the title, director, country, and duration_in_minutes, for all movies with duration between 3-4 hours. Sort the output by duration_in_minutes (descending)
-
+select title, director, country, duration_in_minutes
+from movies
+where duration_in_minutes/60 between 3 and 4
 --[series] Write a query to display the title, director, rating, num_of_seasons for all series with 10 to 14 seasons. Sort the output by num_of_seasons (descending)
-
+select title, director, rating, num_of_seasons
+from series
+where num_of_seasons between 10 and 14
+order by num_of_seasons desc
 --[series] Write a query to display the title, director, rating, num_of_seasons for all series a. containing value in the director column (diretor not equals null) b. and having num_of_seasons > 7
 
+select title, director, rating, num_of_seasons
+from series
+where director is not NULL and num_of_seasons > 7
 -- [movies] Write a query to display the title, director, cast, country and rating, for all movies having Ryan Reynolds in their cast
 
 --[movies] Write a query to display the title, director, cast, country and rating, for all movies having Ryan Reynolds and Nicolas Cage in their cast
