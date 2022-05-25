@@ -63,3 +63,9 @@ e. salary after a raise of 12%, rounded down to the nearest whole number
 */
 
 
+select first_name, 
+salary,
+salary * 1.12 as "salary_raise",
+round(salary*1.12,2) as "round_salary",
+floor(salary*1.12) as "floor_salary" 
+from employees;
