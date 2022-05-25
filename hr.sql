@@ -69,3 +69,35 @@ salary * 1.12 as "salary_raise",
 round(salary*1.12,2) as "round_salary",
 floor(salary*1.12) as "floor_salary" 
 from employees;
+
+/*
+ 7.Write a query to display:
+
+a. first_name
+
+b. hire_date
+
+c. hire_date plus 10 days
+
+d. hire_date plus 1 month
+
+e. Difference in days between current date and hire_date
+ */
+
+
+
+
+/*
+ 8.Write a query to display the first_name, last_name, birth_date, and age for each employee
+ */
+
+
+
+
+/*
+9. Write a query to display the first_name, last_name, and birth_date for employees who were born on the same day and month as today.
+
+For example: if today is 2021-02-15, we are looking for all employees born on February 15th, regardless the year
+
+Note - depends on the current date, this query may or may not return any results.
+*/
