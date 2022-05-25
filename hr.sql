@@ -46,3 +46,20 @@ from employees;
 select id,last_name,first_name,job_title,department_id
 from employees
 where length(job_title)>35;
+
+
+/*
+6- For each employee, display :
+
+a. first_name
+
+b. salary
+
+c. salary after a raise of 12% (salary * 1.12)
+
+d. salary after a raise of 12%, expressed as a whole number (ROUND)
+
+e. salary after a raise of 12%, rounded down to the nearest whole number
+*/
+
+
