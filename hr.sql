@@ -85,13 +85,19 @@ e. Difference in days between current date and hire_date
  */
 
 
-
+select first_name , hire_date , 
+       hire_date + interval  '1 DAY' AS "day_ahead", 
+       hire_date + interval '1 MONTH' AS "month_ahead" , 
+       date_part('day', current_date  - hire_date) AS "elapse_days"
+FROM employees;
 
 /*
  8.Write a query to display the first_name, last_name, birth_date, and age for each employee
  */
 
-
+select first_name , last_name , birth_date,
+	   date_part('year',current_date)-date_part('year',birth_date) as "age"
+	   from employees ;
 
 
 /*
@@ -101,3 +107,7 @@ For example: if today is 2021-02-15, we are looking for all employees born on Fe
 
 Note - depends on the current date, this query may or may not return any results.
 */
+select first_name, last_name, birth_date
+from   employees 
+where  date_part ('month', birth_date) =   date_part ('month', current_date)
+AND    date_part('day', birth_date) =   date_part('day', CURRENT_DATE)  
