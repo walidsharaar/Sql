@@ -118,26 +118,36 @@ from jobs;
 9. Write a query to display the job_id, job_title, published_date, and removed_date for all jobs that were published on 2016
 */
 
-
+select job_id,job_title,published_date, removed_date
+from jobs 
+where date_part('year',published_date)=2016; 
 
 /*
 10. Which job adverts were posted during January 2017 ? Display columns you consider relevant
 */
 
-
+select job_id,job_title,published_date, removed_date
+from jobs
+where date_part('year',published_date)=2017 and date_part('month',published_date)=1; 
 
 
 /*
  11.Which job adverts were removed after a single day ?
 */
 
+select job_id,job_title,published_date,removed_date
+from jobs
+where date_part('day',removed_date - published_date) =1 ;
 
 /*
  12. Which job adverts were posted on the same day and month as the current date ?
 
 For example, if today is February 11th 2021, which jobs were published on February 11th (regardless the year) ?
  */
-
+select job_id,job_title,published_date,removed_date
+from jobs 
+where date_part('month',published_date) = date_part('month',current_date)
+and date_part('day',published_date) = date_part('day',current_date);
 
 /*
 13. In a few job adverts, the value of published_date is greater than the removed_date,  those rows represent invalid data.
@@ -145,7 +155,9 @@ For example, if today is February 11th 2021, which jobs were published on Februa
 Find those rows
 */
 
-
+select job_id,job_title,published_date,removed_date
+from jobs
+where published_date > removed_date ;
 
 /*
 14. List the job adverts where at least one of the following conditions is met:
@@ -157,6 +169,10 @@ b. The row does not contain a value in company_name
 c. The row does not contain a value in headquarters_of_company
 */
 
+select job_id, job_title, removed_date, company_name, headquarters_of_company
+from jobs
+where removed_date  is null or company_name is null or headquarters_of_company  is null;
+
 /*
 15.Take your previous report and instead of the NULL values:
 
@@ -166,9 +182,12 @@ b. Display the company_state instead of NULL values in headquarters_of_company
 
 c. Display 'Not Available' instead of NULL values in company_name
 */
-
-
-
+select job_id, job_title, 
+coalesce (removed_date, current_Date) as "removed_date",
+coalesce (headquarters_of_company, state_of_company) as "headquarters_of_company",
+coalesce(company_name,'Not Available') as "company_name"  
+from jobs
+where removed_date is null or company_name is null or headquarters_of_company  is null;
 /*
 16. Write a query to display the company_name, company_market_value, and a new column : company_market_value_rank, based on the following logic:
 
@@ -181,7 +200,15 @@ c. For companies with market_value in the range of 601-900 provide the rank : 'h
 d. For any other range provide the rank : 'other range'
 */
 
-
+select company_name,company_market_value,
+case
+	when company_market_value between 0 and 300 then 'low range'
+	when company_market_value between 301 and 600 then 'mid range'
+	when company_market_value between 601 and 900 then 'high range'
+	else 'Not in Range'
+end "company_market_value_rank"
+from jobs;
+ 
 /*
  17/ Write a query to display the job_title, company_name, company_size_min, company_size_max, and a new column - company_size, based on the following logic:
 
@@ -193,3 +220,13 @@ c. For companies with up to 180 employees, provide the value: ‘ Large Company’
 
 d. For any other range 'Unknown'
 */
+
+select job_title,company_name,company_size_min,company_size_max,
+case 
+	when cast (replace(company_size_max,'Employees','') as int) <=60 then 'Small Company'
+	when cast (replace(company_size_max,'Employees','') as int) <=120 then 'Medium Company'
+	when cast (replace(company_size_max,'Employees','') as int) <=180 then 'Large Company'
+	else 'Unkown'
+	
+end "company_size"
+from jobs;
