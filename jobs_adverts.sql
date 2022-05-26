@@ -112,3 +112,84 @@ round(company_market_value,2) as roundedValue,
 floor(company_market_value) as flooredValue,
 ceiling(company_market_value) as ceilValue
 from jobs;
+
+
+/*
+9. Write a query to display the job_id, job_title, published_date, and removed_date for all jobs that were published on 2016
+*/
+
+
+
+/*
+10. Which job adverts were posted during January 2017 ? Display columns you consider relevant
+*/
+
+
+
+
+/*
+ 11.Which job adverts were removed after a single day ?
+*/
+
+
+/*
+ 12. Which job adverts were posted on the same day and month as the current date ?
+
+For example, if today is February 11th 2021, which jobs were published on February 11th (regardless the year) ?
+ */
+
+
+/*
+13. In a few job adverts, the value of published_date is greater than the removed_date,  those rows represent invalid data.
+
+Find those rows
+*/
+
+
+
+/*
+14. List the job adverts where at least one of the following conditions is met:
+
+a. The row does not contain a value in removed_date
+
+b. The row does not contain a value in company_name
+
+c. The row does not contain a value in headquarters_of_company
+*/
+
+/*
+15.Take your previous report and instead of the NULL values:
+
+a. Display the current date instead of NULL values in removed_date
+
+b. Display the company_state instead of NULL values in headquarters_of_company
+
+c. Display 'Not Available' instead of NULL values in company_name
+*/
+
+
+
+/*
+16. Write a query to display the company_name, company_market_value, and a new column : company_market_value_rank, based on the following logic:
+
+a. For companies with market_value in the range of 0-300 provide the rank : 'low range'
+
+b. For companies with market_value in the range of 301-600 provide the rank : 'mid range'
+
+c. For companies with market_value in the range of 601-900 provide the rank : 'high range'
+
+d. For any other range provide the rank : 'other range'
+*/
+
+
+/*
+ 17/ Write a query to display the job_title, company_name, company_size_min, company_size_max, and a new column - company_size, based on the following logic:
+
+a. For companies with up to 60 employees, provide the value: ‘Small Company’
+
+b. For companies with up to 120 employees, provide the value: ‘Medium Company’
+
+c. For companies with up to 180 employees, provide the value: ‘ Large Company’
+
+d. For any other range 'Unknown'
+*/
