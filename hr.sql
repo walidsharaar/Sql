@@ -147,7 +147,13 @@ d. Else -> Grade D
  */
 
 
-
+select first_name , last_name , salary , 
+       case when salary between 0 and 5000 then 'Grade A'
+            when salary between 5001 and 15000 then 'Grade B'
+            when salary between 15001 and 20000 then 'Grade C'
+            else 'Grade D'
+       end as "sal_grades"
+from employees 
 
 /*
 12.Write a query to display first_name, last_name, birth_date, age, and a new column (name it 'age_grades') containing values based on the following logic:
@@ -160,4 +166,14 @@ c. For age between 41 and 60 -> 41-60
 
 d. Else -> 60+
 */
+
+select first_name,last_name,birth_date,
+date_part('year',current_date)-date_part('year',birth_date) as "age",
+case 
+	when date_part('year',current_date)-date_part('year',birth_date)  between 0 and 20 then '0-20'
+	when date_part('year',current_date)-date_part('year',birth_date)  between 21 and 40 then '21-40'
+	when date_part('year',current_date)-date_part('year',birth_date)  between 41 and 60 then '41-60'
+	else '60+'
+end "age_grades"
+from employees;
 
