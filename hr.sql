@@ -111,3 +111,16 @@ select first_name, last_name, birth_date
 from   employees 
 where  date_part ('month', birth_date) =   date_part ('month', current_date)
 AND    date_part('day', birth_date) =   date_part('day', CURRENT_DATE)  
+
+/*
+ 10. Write a query to display the id, first_name, marital_status, and salary for employees with no marital_status or salary
+ */
+
+
+/*
+ 11.Repeat your last query, only this time:
+
+a. replace all marital_status NULL values with 'Unknown Status'
+
+b. replace all salary NULL values with 0
+ */
