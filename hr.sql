@@ -115,7 +115,9 @@ AND    date_part('day', birth_date) =   date_part('day', CURRENT_DATE)
 /*
  10. Write a query to display the id, first_name, marital_status, and salary for employees with no marital_status or salary
  */
-
+select id,first_name,marital_status,salary
+from employees 
+where marital_status is null or salary is null;
 
 /*
  11.Repeat your last query, only this time:
@@ -124,3 +126,9 @@ a. replace all marital_status NULL values with 'Unknown Status'
 
 b. replace all salary NULL values with 0
  */
+
+select id,first_name,
+coalesce (marital_status,'Unkown Status') as "marital_status", 
+coalesce (salary ,0) as "salary" 
+from employees 
+where marital_status is null or salary is null;
