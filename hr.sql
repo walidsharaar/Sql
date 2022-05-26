@@ -132,3 +132,32 @@ coalesce (marital_status,'Unkown Status') as "marital_status",
 coalesce (salary ,0) as "salary" 
 from employees 
 where marital_status is null or salary is null;
+
+
+/*
+ 11,. Write a query to display first_name, last_name, salary, and a new column (name it 'sal_grades') containing values based on the following logic:
+
+a. For salaries between 0 and 500 ->  
+
+b. For salaries between 5001 and 15000 -> Grade B
+
+c. For salaries between 15001 and 20000 -> Grade C
+
+d. Else -> Grade D
+ */
+
+
+
+
+/*
+12.Write a query to display first_name, last_name, birth_date, age, and a new column (name it 'age_grades') containing values based on the following logic:
+
+a. For ages between 0 and 20 -> 0-20
+
+b. For age between 21 and 40 -> 21-40
+
+c. For age between 41 and 60 -> 41-60
+
+d. Else -> 60+
+*/
+
