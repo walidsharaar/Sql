@@ -35,4 +35,31 @@ from rooms;
 select  count(distinct neighbourhood_group)
 from rooms;
 
+-- 7. What is the average room price for each neighbourhood_group? Sort the output by the average price (descending)
 
+
+-- 8. Display the amount of rooms for each price_range
+
+
+-- 9. What is the highest reviews_per_month in each room_type?
+
+
+-- 10. What is the average price for each number_of_reviews_range
+
+
+-- 11. How many rooms can you find in each neighbourhood ? Sort the output by the number of rooms (descending)
+
+
+
+--12. How many rooms can you find in each neighbourhood_group and neighbourhood ? Sort the output by neighbourhood_group (ascending)
+
+
+
+
+-- 13. Restrict your last query to display only results from Manhattan and Queens
+
+
+
+
+
+-- 14.What is the average number_of_reviews for each neighbourhood in Brooklyn ?
