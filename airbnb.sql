@@ -37,29 +37,82 @@ from rooms;
 
 -- 7. What is the average room price for each neighbourhood_group? Sort the output by the average price (descending)
 
+select neighbourhood_group, avg(price)
+from rooms
+group by neighbourhood_group
+order by avg(price) desc;
+
 
 -- 8. Display the amount of rooms for each price_range
+
+select price_range,count(id)
+from  rooms
+group by price_range ;
 
 
 -- 9. What is the highest reviews_per_month in each room_type?
 
+select  room_type , max(reviews_per_month) 
+from rooms
+group by room_type ;
 
 -- 10. What is the average price for each number_of_reviews_range
 
+select avg(price),number_of_reviews_range  
+from rooms
+group by number_of_reviews_range;  
 
 -- 11. How many rooms can you find in each neighbourhood ? Sort the output by the number of rooms (descending)
 
-
+select neighbourhood_group, count(id) 
+from rooms
+group by neighbourhood_group 
+order by count(id) desc;
 
 --12. How many rooms can you find in each neighbourhood_group and neighbourhood ? Sort the output by neighbourhood_group (ascending)
 
-
+select neighbourhood_group,neighbourhood, count(id) 
+from rooms
+group by neighbourhood, neighbourhood_group 
+order by neighbourhood_group ;
 
 
 -- 13. Restrict your last query to display only results from Manhattan and Queens
 
-
-
+select neighbourhood_group,neighbourhood, count(id) 
+from rooms
+where neighbourhood_group = 'Manhattan' or neighbourhood_group = 'Queens'
+group by neighbourhood, neighbourhood_group ;
 
 
 -- 14.What is the average number_of_reviews for each neighbourhood in Brooklyn ?
+
+select neighbourhood, avg(number_of_reviews) 
+from rooms
+where neighbourhood_group = 'Brooklyn'
+group by neighbourhood ;
+
+
+-- 15. List the hosts having more than 100 rooms
+
+
+-- 16. List the neighbourhood having average price more than 150
+
+
+
+-- 17. Further restrict your last query, to retrieve only the neighbourhoods in the Bronx
+
+
+
+
+-- 18. Display the average number_of_reviews for each neighbourhood_group and room_type. Sort your output by neighbourhood_group (ascending)
+
+
+
+
+-- 19.Restrict your last query to display only rows with average number_of_reviews greater than 20
+
+
+
+
+-- 20.Further restrict your query to display only information related to private rooms
