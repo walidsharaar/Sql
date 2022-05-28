@@ -93,26 +93,3 @@ where neighbourhood_group = 'Brooklyn'
 group by neighbourhood ;
 
 
--- 15. List the hosts having more than 100 rooms
-
-
--- 16. List the neighbourhood having average price more than 150
-
-
-
--- 17. Further restrict your last query, to retrieve only the neighbourhoods in the Bronx
-
-
-
-
--- 18. Display the average number_of_reviews for each neighbourhood_group and room_type. Sort your output by neighbourhood_group (ascending)
-
-
-
-
--- 19.Restrict your last query to display only rows with average number_of_reviews greater than 20
-
-
-
-
--- 20.Further restrict your query to display only information related to private rooms
