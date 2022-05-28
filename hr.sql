@@ -157,6 +157,14 @@ from employees;
 
 
 -- 13.Write a query to display the employee last name, and his/hers direct manager
-
+select emp.first_name ,emp.last_name , mng.last_name as "direct_manager"
+from employees emp inner join employees mng 
+on emp.manager_id = mng.id ;
 
 --14.Rewrite your query to include all employees, including those with no manager
+select emp.first_name ,emp.last_name , mng.last_name as "direct_manager"
+from employees emp left join employees mng 
+on emp.manager_id = mng.id 
+where emp.manager_id is null ;
+
+
