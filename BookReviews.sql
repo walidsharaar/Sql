@@ -211,6 +211,15 @@ group by l.country ;
 b. Restrict your query to display only books with no publisher details
  */
 
+select b.title,b.num_pages,p.publisher_name 
+from books b  left join publishers p 
+on b.publisher_id  = p.publisher_id ;
+
+
+select b.title,b.num_pages,p.publisher_name 
+from books b  left join publishers p 
+on b.publisher_id  = p.publisher_id 
+where p.publisher_id  is null;
 
 /*
 11. a. Write a query to display the book title, num_pages, publication_date, and authors for all books, including those with no author details
@@ -218,12 +227,24 @@ b. Restrict your query to display only books with no publisher details
 b. Restrict your query to display only books with no author details
  */
 
+select b.title, b.num_pages, b.publication_date, a.authors
+from books b left join authors a 
+on b.author_id = a.author_id;
+
+
+select b.title, b.num_pages, b.publication_date, a.authors
+from books b left join authors a 
+on b.author_id = a.author_id 
+where a.author_id is null;
 
 /*
 12.How many books have never been rated
  */
 
-
+select count(*)
+from books b left join ratings r 
+on b.book_id = r.book_id 
+where r.rating_id is null;
 
 
 
