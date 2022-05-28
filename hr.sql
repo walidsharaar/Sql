@@ -50,15 +50,10 @@ where length(job_title)>35;
 
 /*
 6- For each employee, display :
-
 a. first_name
-
 b. salary
-
 c. salary after a raise of 12% (salary * 1.12)
-
 d. salary after a raise of 12%, expressed as a whole number (ROUND)
-
 e. salary after a raise of 12%, rounded down to the nearest whole number
 */
 
@@ -72,15 +67,10 @@ from employees;
 
 /*
  7.Write a query to display:
-
 a. first_name
-
 b. hire_date
-
 c. hire_date plus 10 days
-
 d. hire_date plus 1 month
-
 e. Difference in days between current date and hire_date
  */
 
@@ -102,9 +92,7 @@ select first_name , last_name , birth_date,
 
 /*
 9. Write a query to display the first_name, last_name, and birth_date for employees who were born on the same day and month as today.
-
 For example: if today is 2021-02-15, we are looking for all employees born on February 15th, regardless the year
-
 Note - depends on the current date, this query may or may not return any results.
 */
 select first_name, last_name, birth_date
@@ -121,9 +109,7 @@ where marital_status is null or salary is null;
 
 /*
  11.Repeat your last query, only this time:
-
 a. replace all marital_status NULL values with 'Unknown Status'
-
 b. replace all salary NULL values with 0
  */
 
@@ -136,13 +122,9 @@ where marital_status is null or salary is null;
 
 /*
  11,. Write a query to display first_name, last_name, salary, and a new column (name it 'sal_grades') containing values based on the following logic:
-
 a. For salaries between 0 and 500 ->  
-
 b. For salaries between 5001 and 15000 -> Grade B
-
 c. For salaries between 15001 and 20000 -> Grade C
-
 d. Else -> Grade D
  */
 
@@ -157,13 +139,9 @@ from employees
 
 /*
 12.Write a query to display first_name, last_name, birth_date, age, and a new column (name it 'age_grades') containing values based on the following logic:
-
 a. For ages between 0 and 20 -> 0-20
-
 b. For age between 21 and 40 -> 21-40
-
 c. For age between 41 and 60 -> 41-60
-
 d. Else -> 60+
 */
 
@@ -177,3 +155,8 @@ case
 end "age_grades"
 from employees;
 
+
+-- 13.Write a query to display the employee last name, and his/hers direct manager
+
+
+--14.Rewrite your query to include all employees, including those with no manager
