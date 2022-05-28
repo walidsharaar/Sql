@@ -134,8 +134,6 @@ on   b.language_code = l.language_code
 group by l.language_name
 order by count(distinct publisher_id) desc;
 
-
-
 /*
  * 7.
 
@@ -190,8 +188,6 @@ on u.user_id = r.user_id
 where b.title  like '%Harry Potter%';
 
 
-
-
 /*
  9.How many unique users have rated titles related to the 'Harry Potter' book-series. Break down your result by each country
  
@@ -207,5 +203,27 @@ join locations l
 on us.location_id = l.location_id 
 where b.title like '%harry potter%'
 group by l.country ;
+
+
+/*
+ 10. a. Write a query to display the book title, num_pages and publisher name for all books, including those with no publisher details
+
+b. Restrict your query to display only books with no publisher details
+ */
+
+
+/*
+11. a. Write a query to display the book title, num_pages, publication_date, and authors for all books, including those with no author details
+
+b. Restrict your query to display only books with no author details
+ */
+
+
+/*
+12.How many books have never been rated
+ */
+
+
+
 
 
