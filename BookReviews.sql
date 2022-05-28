@@ -133,3 +133,35 @@ from books b join languages l
 on   b.language_code = l.language_code
 group by l.language_name
 order by count(distinct publisher_id) desc;
+
+
+
+/*
+ * 7.
+
+a. Write a query to display the first_name, last_name, email, birthdate, occupation_name, country and city for all users
+
+b. Write a query to breakdown the number of users for each country and occupation
+*/
+
+
+
+/*
+ 8.
+
+a. Write a query to display the rating_id, rating_date, rating, book title, and user's full name for each rating
+
+b. Restrict your query to display ratings related to the 'Harry Potter' book-series
+
+c. How many unique users have rated titles related to the 'Harry Potter' book-series?
+*/
+
+
+
+
+
+/*
+ 9.How many unique users have rated titles related to the 'Harry Potter' book-series. Break down your result by each country
+ 
+ 
+ */
