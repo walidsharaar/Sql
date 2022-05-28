@@ -144,7 +144,18 @@ a. Write a query to display the first_name, last_name, email, birthdate, occupat
 b. Write a query to breakdown the number of users for each country and occupation
 */
 
+select us.first_name, us.last_name, us.email, us.birthdate,o.occupation_name, loc.country, loc.city  
+from locations loc inner join users us
+on loc.location_id = us.location_id 
+inner join occupations o 
+on o.occupation_id= us.occupation_id ;
 
+select o.occupation_name, loc.country , count(*) as "users"
+from users us join locations loc
+on loc.location_id = us.location_id 
+join occupations o 
+on o.occupation_id = us.occupation_id 
+group by o.occupation_id, loc.country ; 
 
 /*
  8.
@@ -156,6 +167,27 @@ b. Restrict your query to display ratings related to the 'Harry Potter' book-ser
 c. How many unique users have rated titles related to the 'Harry Potter' book-series?
 */
 
+select r.rating_id, r.rating_date, r.rating, b.title,
+concat(u.first_name,' ' , u.last_name) as "full_name"
+from ratings r join books b 
+on r.book_id  = b.book_id 
+join users u 
+on u.user_id = r.user_id ;
+
+select r.rating_id, r.rating_date, r.rating, b.title,
+concat(u.first_name,' ' , u.last_name) as "full_name"
+from ratings r join books b 
+on r.book_id  = b.book_id 
+join users u 
+on u.user_id = r.user_id 
+where b.title  like '%Harry Potter%';
+
+select count(distinct u.user_id) as "Users"
+from ratings r join books b 
+on r.book_id  = b.book_id 
+join users u 
+on u.user_id = r.user_id 
+where b.title  like '%Harry Potter%';
 
 
 
@@ -165,3 +197,15 @@ c. How many unique users have rated titles related to the 'Harry Potter' book-se
  
  
  */
+
+select l.country, count(distinct us.user_id) as "Users"
+from ratings r join books b 
+on r.book_id = b.book_id 
+join users us 
+on us.user_id = r.user_id 
+join locations l
+on us.location_id = l.location_id 
+where b.title like '%harry potter%'
+group by l.country ;
+
+
