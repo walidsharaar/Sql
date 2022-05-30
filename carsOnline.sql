@@ -69,7 +69,7 @@ d. Restrict your query to for customers above the age 59
 
 /*
  7.
- a. Write a query to display the number of customers living in Australia.
+ a. Write a query to display the number of customers living in Australia .
 
 b. Write another query to display the number of customers with updated phone_number living in Australia (customers who has value in phone_number)
 
