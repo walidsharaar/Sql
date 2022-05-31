@@ -17,9 +17,21 @@ c. Display the average price for each car model during this year
 
 */
 
+select c.car_id, c.price, ct.car_make, ct.car_model, ct.car_year
+from cars c join car_types ct 
+on c.car_type_id = ct.car_type_id ;
 
 
+select c.car_id, c.price, ct.car_make, ct.car_model, ct.car_year 
+from cars c join car_types ct 
+on   c.car_type_id = ct.car_type_id
+where ct.car_make = 'bmw' and ct.car_year between 2015 and 2019;
 
+select ct.car_model, avg(c.price) as "average_price"
+from cars c join car_types ct 
+on   c.car_type_id = ct.car_type_id
+where ct.car_make = 'bmw' and ct.car_year = 2019
+group by ct.car_model;
 
 /*
  2. 
@@ -30,6 +42,15 @@ b. Display the number of cars by each fuel_type_name. Sort the output by the num
 
 */
 
+select c.car_id, c.price, ft.fuel_type_name
+from cars c join fuel_types ft 
+on c.fuel_type_id = ft.fuel_type_id;
+
+select ft.fuel_type_name, count(*) as "number_of_cars"
+from cars c join fuel_types ft 
+on   c.fuel_type_id = ft.fuel_type_id
+group by ft.fuel_type_name
+order by count(*) desc;
 
 
 /*
@@ -39,12 +60,30 @@ b. Display the number of cars by each fuel_type_name. Sort the output by the num
 b. Display the average price for each transmission_name. Sort the output by the average price (descending)
  
  */
+select c.car_id, c.price, tt.transmission_name
+from cars c join transmission_types tt 
+on   c.transmission_type_id = tt.transmission_type_id;
 
+select tt.transmission_name, avg(c.price) as "average_price" 
+from cars c join transmission_types tt 
+on   c.transmission_type_id = tt.transmission_type_id
+group by tt.transmission_name
+order by avg(c.price) desc;
 
 /*
  4.
  Write a query to display the number of manual-gearbox cars, by each car_year and car_make. Sort the output by the year (ascending)
  **/
+
+select ct.car_make, count(distinct ct.car_model) as "number_of_hybrid_cars"
+from cars c join fuel_types ft 
+on   c.fuel_type_id = ft.fuel_type_id
+			join car_types ct 
+on   c.car_type_id = ct.car_type_id
+where ft.fuel_type_name = 'Hybrid'
+group by car_make
+order by count(distinct car_model) desc;
+
 
 
 
@@ -53,6 +92,14 @@ b. Display the average price for each transmission_name. Sort the output by the 
 Write a query to display the number of manual-gearbox cars, by each car_year and car_make. Sort the output by the year (ascending)
  */
 
+select ct.car_year, ct.car_make, count(*) as "number_of_cars"
+from cars c join transmission_types tt 
+on   c.transmission_type_id = tt.transmission_type_id
+			join car_types ct 
+on   c.car_type_id = ct.car_type_id
+where tt.transmission_name = 'Manual'
+group by ct.car_year, ct.car_make
+order by ct.car_year;
 
 /*
  6.
