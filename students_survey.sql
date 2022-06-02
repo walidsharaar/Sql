@@ -5,6 +5,10 @@
 
 -- 1. Write a query to display the student_id, full_name and university_id for all students who go to the same university as student_id 6043
 
+select student_id,full_name, university_id
+from survey 
+where university_id = (select university_id from survey where student_id = 6034)
+
 -- 2. Write a query to display the survey_id and survey_date for all surveys that were taken on the same date as survey_id 532
 
 -- 3. Write a query to display the student_id, full_name and height for all students who are taller than Josephina Athow (full_name)
